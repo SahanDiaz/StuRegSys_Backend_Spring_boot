@@ -2,6 +2,7 @@ package com.stu.stu.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 @Table(name = "User")
@@ -9,7 +10,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private int UserID;
+    private String UserID;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "RoleID",referencedColumnName = "RoleID")
@@ -21,7 +22,7 @@ public class User implements Serializable {
     private String DOB;
     private int ContactNum;
 
-    public User(int userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String DOB, int contactNum) {
+    public User(String userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String DOB, int contactNum) {
         UserID = userID;
         RoleID = roleID;
         Active = active;
@@ -36,11 +37,11 @@ public class User implements Serializable {
 
     }
 
-    public int GetUserID() {
+    public String GetUserID() {
         return UserID;
     }
 
-    public void SetUserID(int userID) {
+    public void SetUserID(String userID) {
         UserID = userID;
     }
 
@@ -113,4 +114,6 @@ public class User implements Serializable {
                 ", ContactNum=" + ContactNum +
                 '}';
     }
+
+
 }
