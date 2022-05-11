@@ -24,11 +24,18 @@ public class UserResource {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<User> GetUserById(@PathVariable("id") int id){
-        User user = UserService.FindUserById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
+//    @GetMapping("/id/{id}")
+//    public ResponseEntit<User> FindUserById(){
+//        List<User> users = UserService.FindUserById(@PathVariable("id") Long id);
+//        User user = UserService.FindUserById(id);
+//        return new ResponseEntity<>(users, HttpStatus.OK);
+//    }
+
+//    @GetMapping("/find/{id}")
+//    public ResponseEntity<User> GetUserById(@PathVariable("id") int id){
+//        User user = UserService.FindUserById(id);
+//        return new ResponseEntity<>(user, HttpStatus.OK);
+//    }
 
     @PostMapping("/add")
     public ResponseEntity<User> AddUser(@RequestBody User user) {
@@ -42,11 +49,11 @@ public class UserResource {
         return new ResponseEntity<>(updateUser,HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> DeleteUser(@PathVariable("id") int id) {
-        UserService.DeleteUser(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<?> DeleteUser(@PathVariable("id") int id) {
+//        UserService.DeleteUser(id);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
 
 }

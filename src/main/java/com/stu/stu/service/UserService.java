@@ -17,7 +17,7 @@ public class UserService {
         this.UserRepo = userRepo;
     }
     public User AddUser(User user){
-        user.SetUserID(UUID.randomUUID().toString());
+
         return  UserRepo.save(user);
     }
     public List<User> FindAllUsers(){
@@ -26,12 +26,13 @@ public class UserService {
     public User UpdateUser(User user){
         return UserRepo.save(user);
     }
-    public User FindUserById(int id){
-        return UserRepo.FindUserById(id).orElseThrow(() ->
-                new UserNotFoundException("User by id "+id+" was not found") );
-    }
-    public void DeleteUser(int id){
-        UserRepo.DeleteUserById(id);
+    public User FindUserById(Long id){
+        return UserRepo.getById(id);
+////                .orElseThrow(() ->
+////                new UserNotFoundException("User by id "+id+" was not found") );
+//    }
+////    public void DeleteUser(Long id){
+////        void DeleteUserById(id){}
     }
 
 }

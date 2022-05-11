@@ -15,7 +15,6 @@ public class RoleService {
         this.RoleRepo = RoleRepo;
     }
     public Role AddRole(Role Role){
-        Role.SetRoleID(UUID.randomUUID().toString());
         return RoleRepo.save(Role);
     }
 }

@@ -8,10 +8,10 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private String  RoleID;
+    private Long  RoleID;
     private String RoleName;
 
-    public Role(String roleID, String roleName) {
+    public Role(Long roleID, String roleName) {
         RoleID = roleID;
         RoleName = roleName;
     }
@@ -19,11 +19,11 @@ public class Role {
     public Role() {
     }
 
-    public String GetRoleID() {
+    public Long GetRoleID() {
         return RoleID;
     }
 
-    public void SetRoleID(String roleID) {
+    public void SetRoleID(Long roleID) {
         RoleID = roleID;
     }
 

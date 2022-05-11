@@ -10,7 +10,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private String UserID;
+    private Long UserID;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "RoleID",referencedColumnName = "RoleID")
@@ -22,26 +22,26 @@ public class User implements Serializable {
     private String DOB;
     private int ContactNum;
 
-    public User(String userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String DOB, int contactNum) {
-        UserID = userID;
-        RoleID = roleID;
-        Active = active;
-        FullName = fullName;
-        StuRegNum = stuRegNum;
-        Email = email;
+    public User(Long userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String DOB, int contactNum) {
+        this.UserID = userID;
+        this.RoleID = roleID;
+        this.Active = active;
+        this.FullName = fullName;
+        this.StuRegNum = stuRegNum;
+        this.Email = email;
         this.DOB = DOB;
-        ContactNum = contactNum;
+        this.ContactNum = contactNum;
     }
 
     public User() {
 
     }
 
-    public String GetUserID() {
+    public Long GetUserID() {
         return UserID;
     }
 
-    public void SetUserID(String userID) {
+    public void SetUserID(Long userID) {
         UserID = userID;
     }
 
