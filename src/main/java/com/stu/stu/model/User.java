@@ -2,7 +2,6 @@ package com.stu.stu.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.UUID;
 
 @Entity
 @Table(name = "User")
@@ -13,24 +12,24 @@ public class User implements Serializable {
     private Long UserID;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "RoleID",referencedColumnName = "RoleID")
-    private Role RoleID;
-    private boolean Active;
-    private String FullName;
-    private int StuRegNum;
-    private String Email;
-    private String DOB;
-    private int ContactNum;
+    @JoinColumn(name = "RoleID",referencedColumnName = "roleID")
+    private Role roleID;
+    private boolean active;
+    private String fullName;
+    private int stuRegNum;
+    private String email;
+    private String dob;
+    private int contactNum;
 
-    public User(Long userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String DOB, int contactNum) {
+    public User(Long userID, Role roleID, boolean active, String fullName, int stuRegNum, String email, String dob, int contactNum) {
         this.UserID = userID;
-        this.RoleID = roleID;
-        this.Active = active;
-        this.FullName = fullName;
-        this.StuRegNum = stuRegNum;
-        this.Email = email;
-        this.DOB = DOB;
-        this.ContactNum = contactNum;
+        this.roleID = roleID;
+        this.active = active;
+        this.fullName = fullName;
+        this.stuRegNum = stuRegNum;
+        this.email = email;
+        this.dob = dob;
+        this.contactNum = contactNum;
     }
 
     public User() {
@@ -46,72 +45,72 @@ public class User implements Serializable {
     }
 
     public Role GetRoleID() {
-        return RoleID;
+        return roleID;
     }
 
     public void SetRoleID(Role roleID) {
-        RoleID = roleID;
+        this.roleID = roleID;
     }
 
     public boolean IsActive() {
-        return Active;
+        return active;
     }
 
     public void SetActive(boolean active) {
-        Active = active;
+        this.active = active;
     }
 
     public String GetFullName() {
-        return FullName;
+        return fullName;
     }
 
     public void SetFullName(String fullName) {
-        FullName = fullName;
+        this.fullName = fullName;
     }
 
     public int GetStuRegNum() {
-        return StuRegNum;
+        return stuRegNum;
     }
 
     public void SetStuRegNum(int stuRegNum) {
-        StuRegNum = stuRegNum;
+        this.stuRegNum = stuRegNum;
     }
 
     public String GetEmail() {
-        return Email;
+        return email;
     }
 
     public void SetEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String GetDOB() {
-        return DOB;
+        return dob;
     }
 
     public void SetDOB(String DOB) {
-        this.DOB = DOB;
+        this.dob = DOB;
     }
 
     public int GetContactNum() {
-        return ContactNum;
+        return contactNum;
     }
 
     public void SetContactNum(int contactNum) {
-        ContactNum = contactNum;
+        this.contactNum = contactNum;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "UserID=" + UserID +
-                ", RoleID=" + RoleID +
-                ", Active=" + Active +
-                ", FullName='" + FullName + '\'' +
-                ", StuRegNum=" + StuRegNum +
-                ", Email='" + Email + '\'' +
-                ", DOB='" + DOB + '\'' +
-                ", ContactNum=" + ContactNum +
+                ", RoleID=" + roleID +
+                ", Active=" + active +
+                ", FullName='" + fullName + '\'' +
+                ", StuRegNum=" + stuRegNum +
+                ", Email='" + email + '\'' +
+                ", DOB='" + dob + '\'' +
+                ", ContactNum=" + contactNum +
                 '}';
     }
 
